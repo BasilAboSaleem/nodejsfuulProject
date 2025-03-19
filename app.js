@@ -25,7 +25,16 @@ liveReloadServer.server.once("connection", () => {
 // GET Requst
 app.get("/", (req, res) => {
   // result ==> array of objects
-  res.render("index", {});
+  console.log("------------------------------------------------------------");
+  User.find()
+  .then((result) => {
+    res.render("index", {arr: result});
+
+  })
+  .catch((err) => {
+    console.log(err);
+    
+  });
 });
 
 app.get("/user/add.html", (req, res) => {
@@ -39,6 +48,10 @@ app.get("/user/view.html", (req, res) => {
 app.get("/user/edit.html", (req, res) => {
   res.render("user/edit");
 });
+// هذه الجيت عمليتها انا لابعتها لما ينجح بتسجيل مستخدم جديد
+app.get("/user/sucsess.html", (req, res) => {
+  res.render("user/sucsess");
+});
 
 // POST Requst
 app.post("/user/add.html", (req, res) => {
@@ -48,7 +61,7 @@ app.post("/user/add.html", (req, res) => {
     .save()
     .then(() => {
       console.log(req.body);
-      res.redirect("/user/add.html");
+      res.redirect("/");
     })
     .catch((err) => {
       console.log(err);
