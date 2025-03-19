@@ -1,0 +1,16 @@
+
+
+name & schema
+
+{
+  fireName: ssssssssssss,
+  lastName: ssssssssssss,
+  email: sssssssssss,
+  phoneNumber: sssssssss,
+  age: sssssssssssss,
+  country: sssssssssss,
+  gender: ssssssss,
+
+}
+
+هذا الدرس عند ارسال البيانات قمت بتحميله بسبب خلل كبير الفورم الذي أنشئته سابقا ولا اريد اضاعة الوقت في ايجاد الخطا داخل الفورم
