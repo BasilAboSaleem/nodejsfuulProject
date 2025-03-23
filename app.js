@@ -37,12 +37,23 @@ app.get("/", (req, res) => {
   });
 });
 
+
+app.get("/user/:id", (req,res) => {
+  User.findById(req.params.id)
+  .then((result) => {
+    res.render("user/view", {obj: result});
+  })
+  .catch()
+    
+  
+
+  
+})
+
+
+
 app.get("/user/add.html", (req, res) => {
   res.render("user/add");
-});
-
-app.get("/user/view.html", (req, res) => {
-  res.render("user/view");
 });
 
 app.get("/user/edit.html", (req, res) => {
