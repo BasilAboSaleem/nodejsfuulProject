@@ -1,5 +1,17 @@
 
+  model.save() ==> to send data to DB
+  
+  model.find() ==> to get all data from DB
+  model.findById("64c084e1ba1c09af7a125c58)
 
+
+
+  model.findByIdDelete("64c084e1ba1c09af7a125c58") ==> Delete Request
+  model.deleteOne({_id: req.params.id})  ==> Delete Request
+
+
+
+  
 name & schema
 
 {
@@ -12,5 +24,32 @@ name & schema
   gender: ssssssss,
 
 }
+
+ {
+    _id: new ObjectId("67daa96b319a2705844a1dd1"),
+    fireName: 'vcb',
+    lastName: 'vb',
+    email: 'v@gmail.com',
+    phoneNumber: '123210',
+    age: 10,
+    country: 'Morocco',
+    gender: 'Male',
+    __v: 0
+  },
+  {
+    _id: new ObjectId("67dfc29b156d0f332d5bbe3f"),
+    fireName: 'saleem',
+    lastName: 'abo saleem',
+    email: 's@gmail.com',
+    phoneNumber: '25645',
+    age: 56,
+    country: 'Egypt',
+    gender: 'Male',
+    createdAt: 2025-03-23T08:13:15.915Z,
+    updatedAt: 2025-03-23T08:13:15.915Z,
+    __v: 0
+  }
+]
+
 
 هذا الدرس عند ارسال البيانات قمت بتحميله بسبب خلل كبير الفورم الذي أنشئته سابقا ولا اريد اضاعة الوقت في ايجاد الخطا داخل الفورم
