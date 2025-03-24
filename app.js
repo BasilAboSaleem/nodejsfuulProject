@@ -9,6 +9,8 @@ app.use(express.static("public"));
 var moment = require('moment'); 
 var methodOverride = require('method-override')
 app.use(methodOverride('_method'))
+const countryList = require("country-list");
+
 // Auto refresh
 const path = require("path");
 const livereload = require("livereload");
@@ -40,7 +42,9 @@ app.get("/", (req, res) => {
   });
 });
 app.get("/user/add.html", (req, res) => {
-  res.render("user/add");
+  const countries = countryList.getNames(); // جلب أسماء الدول
+  res.render("user/add", { countries }); // تمرير قائمة الدول إلى القالب
+ 
 });
 // هذه الجيت عمليتها انا لابعتها لما ينجح بتسجيل مستخدم جديد
 app.get("/user/sucsess.html", (req, res) => {
@@ -50,9 +54,10 @@ app.get("/user/sucsess.html", (req, res) => {
 
 
 app.get("/edit/:id", (req, res) => {
+  const countries = countryList.getNames(); // جلب أسماء الدول
   User.findById(req.params.id)
   .then((result) => {
-    res.render("user/edit", {obj: result, moment:moment});
+    res.render("user/edit", {obj: result, moment:moment, countries});
   })
   .catch()
   
