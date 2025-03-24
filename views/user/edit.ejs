@@ -55,11 +55,12 @@
 
 
 
-        <form class="mx-0 row gx-3 gy-4 mt-2">
+        <form action="/edit/<%= obj._id %>?_method=PUT" method="post" class="mx-0 row gx-3 gy-4 mt-2">
           <div class="col-md-6">
             <label for="inputfirstName4" class="form-label">First Name:</label>
             <input
               placeholder= "<%= obj.fireName %>" 
+              name="fireName"
               type="text"
               class="form-control"
               id="inputfirstName4"
@@ -69,6 +70,7 @@
             <label for="inputlastName4" class="form-label">Last Name:</label>
             <input
               placeholder="<%= obj.lastName %>"
+              name="lastName"
               type="text"
               class="form-control"
               id="inputlastName4"
@@ -79,6 +81,7 @@
             <label for="inputemail4" class="form-label">Email:</label>
             <input
               placeholder="<%= obj.email %>"
+              name="email"
               type="email"
               class="form-control"
               id="inputemail4"
@@ -88,6 +91,7 @@
             <label for="inputtele4" class="form-label">Telephone:</label>
             <input
               placeholder="<%= obj.phoneNumber %>"
+              name="phoneNumber"
               type="number"
               class="form-control"
               id="inputtele4"
@@ -99,6 +103,7 @@
               <label for="inputage4" class="form-label">Age:</label>
               <input
                 placeholder="<%= obj.age %>"
+                name="age"
                 type="number"
                 class="form-control"
                 id="inputage4"
@@ -121,7 +126,7 @@
           <div>
             <div class="col-md-6">
               <label for="inputGender" class="form-label">Gender:</label>
-              <select id="inputGender" class="form-select">
+              <select name="gender" id="inputGender" class="form-select">
                 <option selected hidden disabled><%= obj.gender%></option>
                 <option>Male</option>
                 <option>Female</option>

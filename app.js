@@ -82,9 +82,9 @@ app.get("/view/:id", (req,res) => {
 // POST Requst
 app.post("/user/add.html", (req, res) => {
  
-  const user = new User(req.body);
-  user
-    .save()
+  
+  User
+    .create(req.body)
     .then(() => {
       console.log(req.body);
       res.render("user/sucsess");
@@ -111,6 +111,23 @@ app.delete("/edit/:id", (req,res) => {
   
 })
 
+
+// PUT Requste
+app.put("/edit/:id", (req,res) => {
+  console.log(req.body);
+  User.findByIdAndUpdate(req.params.id, req.body).then(() => {
+    res.redirect("/")
+  })
+  .catch((err) => {
+    console.log(err);
+  })
+ 
+  })
+  
+
+
+/////////////
+//الاتصال بقاعدة البيانات
 mongoose
 .connect(
   "mongodb+srv://basil:_%23X8p%21_4U%23dmMN8@cluster0.8gkpu.mongodb.net/all-data?retryWrites=true&w=majority&appName=Cluster0"
