@@ -3,13 +3,14 @@
     class="container-fluid justify-content-center justify-content-md-between"
   >
     <a class="navbar-brand fw-medium fs-3 mb-1 mb-md-0">
-      Courses <sup>4</sup> arab</a
+      Courses <sup>7</sup> OCT</a
     >
 
-    <form class="d-flex" role="search">
+    <form action="/search" method="post" class="d-flex" role="search">
       <input
         class="form-control me-2"
         type="search"
+        name="searchText"  
         placeholder="Search"
         aria-label="Search"
       />
@@ -17,5 +18,6 @@
         Search
       </button>
     </form>
+
   </div>
 </nav>

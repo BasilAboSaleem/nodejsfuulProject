@@ -95,6 +95,18 @@ app.post("/user/add.html", (req, res) => {
 });
 
 
+app.post("/search", (req, res) => {
+    const searchText= req.body.searchText.trim();
+  User.find({$or: [{ fireName: searchText }, {lastName : searchText}] })
+  .then((result) => {
+    res.render("user/search", {arr: result, moment:moment});
+  })
+  .catch((err) => {
+    console.log(err);
+  })
+})
+
+
 ////////////////////
 
 
