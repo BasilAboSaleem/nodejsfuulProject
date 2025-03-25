@@ -3,25 +3,13 @@ const router = express.Router()
 const User = require("../models/customerSchema");
 var moment = require('moment'); 
 const countryList = require("country-list");
+const userController = require("../controllers/userController")
 
 
 
 
 // GET Requst
-router.get("/", (req, res) => {
-  // result ==> array of objects
-  console.log("------------------------------------------------------------");
-  User.find()
-  .then((result) => {
-   
-    res.render("index", {arr: result , moment:moment});
-
-  })
-  .catch((err) => {
-    console.log(err);
-    
-  });
-});
+router.get("/", userController.user_index_get);
 
 router.get("/user/add.html", (req, res) => {
   const countries = countryList.getNames(); // جلب أسماء الدول
